@@ -30,23 +30,8 @@ def extract_text(file_path):
     try:
         for i in range(5):
             page = next(doc)
-            image = page.viz()
-            plt.figure(figsize = (25,17))
-            plt.axis('off')
-            plt.imshow(image)
-            plt.show()
-            print(page.text)
             data.append(page.text)
     except StopIteration:
         print("The PDF has only one page.")
-        image = doc.viz()
-        plt.figure(figsize = (25,17))
-        plt.axis('off')
-        plt.imshow(image)
-        plt.show()
-        print(doc.text)
         data.append(page.text)
     return data
-
-extract_result =  extract_text("/root/django-framework/ddtocr/ddtocr/Dataset/VIM_Doc_513419_TEMP.pdf")
-print(extract_result)
