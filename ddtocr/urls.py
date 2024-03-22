@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ddtocr.views import extract_text_and_tables
+from extraction.views import index
 
 urlpatterns = [
-    path('api/extract/', extract_text_and_tables, name='extract_text_and_tables'),
+    path('api/extract/', index, name='extract_text_and_tables'),
 ]
